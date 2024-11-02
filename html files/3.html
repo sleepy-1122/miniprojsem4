@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: beige;
+        }
+        .container {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            border-radius: 6px;
+            padding: 30px;
+            margin: 0 15px;
+            background-color: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .container header {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container header::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 3px;
+            width: 27px;
+            border-radius: 8px;
+            background-color: #4070f4;
+        }
+        .container form {
+            position: relative;
+            margin-top: 16px;
+            min-height: 490px;
+            background-color: #fff;
+        }
+        .container form .details {
+            margin-top: 10px;
+        }
+        .container form .title {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            margin: 6px 0;
+            color: #333;
+        }
+        .container form .fields {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        form .fields .form-fields {
+            display: flex;
+            width: calc(100% / 3 - 15px);
+            flex-direction: column;
+            margin: 4px 0;
+        }
+        .form-field label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #2e2e2e;
+        }
+        .form-field input,
+        select {
+            outline: black;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+            padding: 10px; /* Reduce padding */
+            height: 30px; /* Reduce height */
+            margin: 8px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #b5b1a8e0;
+            border: none;
+            border-radius: 4px;
+            color: #f1ef92;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 20px;
+        }
+        /* Increase font size of Total CGPA labels */
+        .container form .fields .form-field label {
+            font-size: 14px;
+        }
+    </style>
+    <title>Registration</title>
+</head>
+<body>
+    <div class="container">
+        <header>STUDENT'S ACADEMIC PERFORMANCES</header>
+        <form id="signup-form">
+            <div class="fields">
+                <!-- TOTAL CGPA -->
+                <div class="form-field cgpa-field">
+                    <label for="TOTALCGPA1">Total CGPA SEM 1</label>
+                    <input type="number" placeholder="TOTAL CGPA SEM 1" id="TOTALCGPA1" required>
+                </div>
+                <div class="form-field cgpa-field">
+                    <label for="TOTALCGPA2">Total CGPA SEM 2</label>
+                    <input type="number" placeholder="TOTAL CGPA SEM 2" id="TOTALCGPA2" required>
+                </div>
+                <div class="form-field cgpa-field">
+                    <label for="TOTALCGPA3">Total CGPA SEM 3</label>
+                    <input type="number" placeholder="TOTAL CGPA SEM 3" id="TOTALCGPA3" required>
+                </div>
+                <div class="form-field cgpa-field">
+                    <label for="TOTALCGPA4">Total CGPA SEM 4</label>
+                    <input type="number" placeholder="TOTAL CGPA SEM 4" id="TOTALCGPA4" required>
+                </div>
+                <div class="form-field cgpa-field">
+                    <label for="TOTALCGPA5">Total CGPA SEM 5</label>
+                    <input type="number" placeholder="TOTAL CGPA SEM 5" id="TOTALCGPA5" required>
+                </div>
+                <div class="form-field cgpa-field">
+                    <label for="TOTALCGPA6">Total CGPA SEM 6</label>
+                    <input type="number" placeholder="TOTAL CGPA SEM 6" id="TOTALCGPA6" required>
+                </div>
+                <div class="form-field cgpa-field">
+                    <label for="TOTALCGPA7">Total CGPA SEM 7</label>
+                    <input type="number" placeholder="TOTAL CGPA SEM 7" id="TOTALCGPA7" required>
+                </div>
+                <div class="form-field cgpa-field">
+                    <label for="TOTALCGPA8">Total CGPA SEM 8</label>
+                    <input type="number" placeholder="TOTAL CGPA SEM 8" id="TOTALCGPA8" required>
+                </div>
+                <a href="4.html">Next</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

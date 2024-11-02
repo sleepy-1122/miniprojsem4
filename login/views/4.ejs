@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Student Certificates</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: beige;
+        }
+
+        .container {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            border-radius: 6px;
+            padding: 30px;
+            margin: 0 15px;
+            background-color: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container header {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container header::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 3px;
+            width: 27px;
+            border-radius: 8px;
+            background-color: #4070f4;
+        }
+
+        .container form {
+            position: relative;
+            margin-top: 16px;
+            min-height: 490px;
+            background-color: #fff;
+        }
+
+        .container form .details {
+            margin-top: 10px;
+        }
+
+        .container form .title {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            margin: 6px 0;
+            color: #333;
+        }
+
+        .container form .fields {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .form-fields {
+            display: flex;
+            width: calc(100% / 3 - 15px);
+            flex-direction: column;
+            margin: 4px 0;
+        }
+
+        .form-field label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #2e2e2e;
+        }
+
+        .form-field input,
+        select {
+            outline: none;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+            padding: 15px 20px;
+            height: 42px;
+            margin: 8px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #b5b1a8e0;
+            border: none;
+            border-radius: 4px;
+            color: #f1ef92;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .add-certificate-button {
+            background-color: #b5b1a8e0;
+            border: none;
+            border-radius: 4px;
+            color: #f1ef92;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            width: calc(25% - 10px);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header><%= pageTitle %></header>
+        <header>Course Certificates</header>
+        <div id="course-certificates">
+            <!-- Replace buttons with file input fields -->
+            <form method="GET" action="/students/new" enctype="multipart/form-data">
+            <div class="form-fields">
+                <label for="certificate1">Certificate 1:</label>
+                <input type="file" id="certificate1" name="certificate1" required>
+            </div>
+            <div class="form-fields">
+                <label for="certificate2">Certificate 2:</label>
+                <input type="file" id="certificate2" name="certificate2">
+            </div>
+            <div class="form-fields">
+                <label for="certificate3">Certificate 3:</label>
+                <input type="file" id="certificate3" name="certificate3">
+            </div>
+            <div class="form-fields">
+                <label for="certificate4">Certificate 4:</label>
+                <input type="file" id="certificate4" name="certificate4">
+            </div>
+        </div>
+        <form action="/submit" method="post" enctype="multipart/form-data">
+            <div class="form-fields">
+                <label for="internship_name">Internship Name:</label>
+                <input type="text" id="internship_name" name="internship_name">
+            </div>
+            <div class="form-fields">
+                <label for="certificate">Certificate:</label>
+                <input type="file" id="certificate" name="certificate">
+            </div>
+            <button>Upload</button>
+        </form>
+        <%- include('login/5.ejs') %>
+
+    </div>
+    <script>
+        function addCertificate() {
+            // Implement the logic to add a certificate field here
+        }
+    </script>
+</body>
+</html>

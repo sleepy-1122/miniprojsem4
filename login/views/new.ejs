@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-8 offset-2" >
+      <br><br>
+    <h3>Login Page</h3>
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="Email" class="form-label">Email</label>
+          <input name="student[Email]"
+           placeholder="Enter Email" 
+           type="email" 
+           class="form-control"
+           required
+           />
+           <div class="valid-feedback">Email looks good</div> 
+        </div>
+      <div>
+        <label for="Password" class="form-label">Password</label>
+        <input name="student[Password]"
+         placeholder="Enter Password" 
+         type="password" 
+         class="form-control" required
+         />
+         <div class="invalid-feedback">Please enter a password</div> 
+      </div> 
+
+      <!-- Add other fields similar to the above with appropriate labels and input types -->
+
+<button class="btn btn-dark">Add</button>
+    </form>
+  </div>
+</div>

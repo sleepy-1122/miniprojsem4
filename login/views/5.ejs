@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Extracurricular Activities</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: beige;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            border-radius: 6px;
+            padding: 30px;
+            margin: 0 15px;
+            background-color: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .activity {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .activity label {
+            margin-bottom: 5px;
+        }
+
+        .activity input[type="text"],
+        .activity input[type="file"] {
+            width: calc(100% - 120px);
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .activity button {
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Extracurricular Activities Form</h1>
+        <form action="/students/new" method="post" enctype="multipart/form-data">
+            <div id="activitiesContainer">
+                <% for (let i = 0; i < activities.length; i++) { %>
+                <div class="activity">
+                    <label for="activity_name_<%= i %>">Activity Name:</label>
+                    <select name="activity_name[]">
+                        <option value="Sports">Sports</option>
+                        <option value="Music">Music</option>
+                        <option value="SORT council">SORT council</option>
+                        <option value="College competitions">College competitions</option>
+                    </select>
+                    <label for="certificate_<%= i %>">Certificate:</label>
+                    <input type="file" name="certificate[]">
+                    <button type="button" onclick="removeActivity(this)">Remove</button>
+                </div>
+                <% } %>
+            </div>
+            <button type="button" onclick="addActivity()">Add Activity</button>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function addActivity() {
+            var container = document.getElementById('activitiesContainer');
+            var newActivity = document.createElement('div');
+            newActivity.classList.add('activity');
+            newActivity.innerHTML = `
+                <label for="activity_name">Activity Name:</label>
+                <select name="activity_name[]">
+                    <option value="Sports">Sports</option>
+                    <option value="Music">Music</option>
+                    <option value="SORT council">SORT council</option>
+                    <option value="College competitions">College competitions</option>
+                </select>
+                <label for="certificate">Certificate:</label>
+                <input type="file" name="certificate[]">
+                <button type="button" onclick="removeActivity(this)">Remove</button>
+            `;
+            container.appendChild(newActivity);
+        }
+
+        function removeActivity(button) {
+            button.parentNode.remove();
+        }
+    </script>
+</body>
+</html>
